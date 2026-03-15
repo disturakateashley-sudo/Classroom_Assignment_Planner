@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Classroom Assignment Planner</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>📚 Classroom Assignment Planner</h1>
+
+<div class="top-controls">
+
+<input type="text" id="search" placeholder="Search assignments">
+
+<button id="darkModeBtn">🌙 Dark Mode</button>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<h2>Add Assignment</h2>
+
+<form id="taskForm">
+
+<input type="text" id="title" placeholder="Assignment title" required>
+
+<input type="date" id="deadlineDate" required>
+
+<input type="time" id="deadlineTime" required>
+
+<select id="priority">
+<option value="Low">Low Priority</option>
+<option value="Medium">Medium Priority</option>
+<option value="High">High Priority</option>
+</select>
+
+<button type="submit">Add Task</button>
+
+</form>
+
+
+<div class="stats">
+
+<div class="card">
+<h3>Total</h3>
+<p id="total">0</p>
+</div>
+
+<div class="card done">
+<h3>Completed</h3>
+<p id="done">0</p>
+</div>
+
+<div class="card missed">
+<h3>Missed</h3>
+<p id="missed">0</p>
+</div>
+
+</div>
+
+
+<h2>Progress Chart</h2>
+
+<canvas id="progressChart"></canvas>
+
+
+<h2>Your Assignments</h2>
+
+<!-- FILTER BUTTONS ADDED HERE -->
+<div class="filters">
+<button onclick="setFilter('all')">All</button>
+<button onclick="setFilter('pending')">Pending</button>
+<button onclick="setFilter('done')">Done</button>
+<button onclick="setFilter('missed')">Missed</button>
+</div>
+
+<div id="taskList"></div>
+
+</div>
+
+<footer>
+<p>Classroom Assignment Planner</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
